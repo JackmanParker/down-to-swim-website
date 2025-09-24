@@ -35,7 +35,7 @@ export function Footer() {
                 href="/instructors"
                 className="block text-muted-foreground hover:text-primary transition-colors text-sm"
               >
-                Instructors
+                Instructor
               </Link>
               <Link
                 href="/reviews"

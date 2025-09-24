@@ -1,9 +1,9 @@
-"use client"
+"use client";
 
-import { useState } from "react"
-import { Header } from "@/components/header"
-import { Footer } from "@/components/footer"
-import { Button } from "@/components/ui/button"
+import { useState } from "react";
+import { Header } from "@/components/header";
+import { Footer } from "@/components/footer";
+import { Button } from "@/components/ui/button";
 
 export default function ContactPage() {
   const [formData, setFormData] = useState({
@@ -11,15 +11,17 @@ export default function ContactPage() {
     email: "",
     phone: "",
     message: "",
-    lessonType: ""
-  })
-  const [isSubmitting, setIsSubmitting] = useState(false)
-  const [submitStatus, setSubmitStatus] = useState<"idle" | "success" | "error">("idle")
+    lessonType: "",
+  });
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitStatus, setSubmitStatus] = useState<
+    "idle" | "success" | "error"
+  >("idle");
 
   const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault()
-    setIsSubmitting(true)
-    setSubmitStatus("idle")
+    e.preventDefault();
+    setIsSubmitting(true);
+    setSubmitStatus("idle");
 
     try {
       const response = await fetch("/api/contact", {
@@ -28,27 +30,37 @@ export default function ContactPage() {
           "Content-Type": "application/json",
         },
         body: JSON.stringify(formData),
-      })
+      });
 
       if (response.ok) {
-        setSubmitStatus("success")
-        setFormData({ name: "", email: "", phone: "", message: "", lessonType: "" })
+        setSubmitStatus("success");
+        setFormData({
+          name: "",
+          email: "",
+          phone: "",
+          message: "",
+          lessonType: "",
+        });
       } else {
-        setSubmitStatus("error")
+        setSubmitStatus("error");
       }
     } catch (error) {
-      setSubmitStatus("error")
+      setSubmitStatus("error");
     } finally {
-      setIsSubmitting(false)
+      setIsSubmitting(false);
     }
-  }
+  };
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
+  const handleChange = (
+    e: React.ChangeEvent<
+      HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement
+    >
+  ) => {
     setFormData({
       ...formData,
-      [e.target.name]: e.target.value
-    })
-  }
+      [e.target.name]: e.target.value,
+    });
+  };
 
   return (
     <div className="min-h-screen flex flex-col">
@@ -56,12 +68,13 @@ export default function ContactPage() {
       <main className="flex-1 container mx-auto px-4 py-8">
         <div className="max-w-2xl mx-auto">
           <h1 className="text-3xl font-bold mb-6">Contact Us</h1>
-          
+
           <div className="space-y-6">
             <div>
               <h2 className="text-xl font-semibold mb-2">Get in Touch</h2>
               <p className="text-muted-foreground">
-                Ready to start your swimming journey? Contact us to book a lesson or ask any questions.
+                Ready to start swimming? Contact us to book a lesson or ask any
+                questions.
               </p>
             </div>
 
@@ -73,14 +86,18 @@ export default function ContactPage() {
 
             {submitStatus === "error" && (
               <div className="bg-red-50 border border-red-200 text-red-800 px-4 py-3 rounded-md">
-                Sorry, there was an error sending your message. Please try again or call us directly.
+                Sorry, there was an error sending your message. Please try again
+                or call us directly.
               </div>
             )}
 
             <form onSubmit={handleSubmit} className="space-y-4">
               <div className="grid md:grid-cols-2 gap-4">
                 <div>
-                  <label htmlFor="name" className="block text-sm font-medium mb-1">
+                  <label
+                    htmlFor="name"
+                    className="block text-sm font-medium mb-1"
+                  >
                     Name *
                   </label>
                   <input
@@ -94,7 +111,10 @@ export default function ContactPage() {
                   />
                 </div>
                 <div>
-                  <label htmlFor="email" className="block text-sm font-medium mb-1">
+                  <label
+                    htmlFor="email"
+                    className="block text-sm font-medium mb-1"
+                  >
                     Email *
                   </label>
                   <input
@@ -111,7 +131,10 @@ export default function ContactPage() {
 
               <div className="grid md:grid-cols-2 gap-4">
                 <div>
-                  <label htmlFor="phone" className="block text-sm font-medium mb-1">
+                  <label
+                    htmlFor="phone"
+                    className="block text-sm font-medium mb-1"
+                  >
                     Phone
                   </label>
                   <input
@@ -124,7 +147,10 @@ export default function ContactPage() {
                   />
                 </div>
                 <div>
-                  <label htmlFor="lessonType" className="block text-sm font-medium mb-1">
+                  <label
+                    htmlFor="lessonType"
+                    className="block text-sm font-medium mb-1"
+                  >
                     Lesson Type
                   </label>
                   <select
@@ -135,18 +161,22 @@ export default function ContactPage() {
                     className="w-full px-3 py-2 border border-border rounded-md focus:outline-none focus:ring-2 focus:ring-primary"
                   >
                     <option value="">Select lesson type</option>
-                    <option value="private">Private Lesson</option>
-                    <option value="group">Group Lesson</option>
+                    <option value="FDS">Therapeutic Aquatics (FDS)</option>
+                    <option value="special needs OOP">
+                      Special Needs Out of Pocket Lessons
+                    </option>
                     <option value="adult">Adult Lessons</option>
                     <option value="child">Child Lessons</option>
-                    <option value="competitive">Competitive Training</option>
                     <option value="other">Other</option>
                   </select>
                 </div>
               </div>
 
               <div>
-                <label htmlFor="message" className="block text-sm font-medium mb-1">
+                <label
+                  htmlFor="message"
+                  className="block text-sm font-medium mb-1"
+                >
                   Message *
                 </label>
                 <textarea
@@ -174,5 +204,5 @@ export default function ContactPage() {
       </main>
       <Footer />
     </div>
-  )
+  );
 }

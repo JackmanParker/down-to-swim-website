@@ -1,76 +1,78 @@
-"use client"
+"use client";
 
-import { useState } from "react"
-import { Header } from "@/components/header"
-import { Footer } from "@/components/footer"
-import { Button } from "@/components/ui/button"
-import { Card } from "@/components/ui/card"
-import { ChevronLeft, ChevronRight, Star } from "lucide-react"
+import { useState } from "react";
+import { Header } from "@/components/header";
+import { Footer } from "@/components/footer";
+import { Button } from "@/components/ui/button";
+import { Card } from "@/components/ui/card";
+import { ChevronLeft, ChevronRight, Star } from "lucide-react";
 
-// Sample reviews data - you can replace with real reviews
+// Dummy data
 const reviews = [
   {
     id: 1,
     name: "Sarah Johnson",
     rating: 5,
     text: "Amazing experience! My daughter went from being afraid of water to swimming confidently. The instructors are patient and encouraging.",
-    relationship: "Parent of Emma, age 8"
+    relationship: "Parent of Emma, age 8",
   },
   {
     id: 2,
     name: "Mike Chen",
     rating: 5,
     text: "Professional, safe, and fun. My son learned proper technique and gained confidence. Highly recommend Down to Swim!",
-    relationship: "Parent of Alex, age 10"
+    relationship: "Parent of Alex, age 10",
   },
   {
     id: 3,
     name: "Lisa Rodriguez",
     rating: 5,
     text: "The adult lessons were perfect for me. I finally learned to swim at 35! The instructors made me feel comfortable and confident.",
-    relationship: "Adult student"
+    relationship: "Adult student",
   },
   {
     id: 4,
     name: "David Thompson",
     rating: 5,
     text: "Excellent competitive training program. My daughter improved her times significantly and learned advanced techniques.",
-    relationship: "Parent of competitive swimmer"
+    relationship: "Parent of competitive swimmer",
   },
   {
     id: 5,
     name: "Jennifer Lee",
     rating: 5,
     text: "The group lessons are well-structured and fun. My kids look forward to every session. Great value for money!",
-    relationship: "Parent of twins, ages 6 & 7"
-  }
-]
+    relationship: "Parent of twins, ages 6 & 7",
+  },
+];
 
 export default function ReviewsPage() {
-  const [currentReview, setCurrentReview] = useState(0)
+  const [currentReview, setCurrentReview] = useState(0);
   const [formData, setFormData] = useState({
     name: "",
     email: "",
     rating: 5,
     review: "",
     relationship: "",
-    allowMarketing: false
-  })
-  const [isSubmitting, setIsSubmitting] = useState(false)
-  const [submitStatus, setSubmitStatus] = useState<"idle" | "success" | "error">("idle")
+    allowMarketing: true,
+  });
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitStatus, setSubmitStatus] = useState<
+    "idle" | "success" | "error"
+  >("idle");
 
   const nextReview = () => {
-    setCurrentReview((prev) => (prev + 1) % reviews.length)
-  }
+    setCurrentReview((prev) => (prev + 1) % reviews.length);
+  };
 
   const prevReview = () => {
-    setCurrentReview((prev) => (prev - 1 + reviews.length) % reviews.length)
-  }
+    setCurrentReview((prev) => (prev - 1 + reviews.length) % reviews.length);
+  };
 
   const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault()
-    setIsSubmitting(true)
-    setSubmitStatus("idle")
+    e.preventDefault();
+    setIsSubmitting(true);
+    setSubmitStatus("idle");
 
     try {
       const response = await fetch("/api/reviews", {
@@ -79,28 +81,40 @@ export default function ReviewsPage() {
           "Content-Type": "application/json",
         },
         body: JSON.stringify(formData),
-      })
+      });
 
       if (response.ok) {
-        setSubmitStatus("success")
-        setFormData({ name: "", email: "", rating: 5, review: "", relationship: "", allowMarketing: false })
+        setSubmitStatus("success");
+        setFormData({
+          name: "",
+          email: "",
+          rating: 5,
+          review: "",
+          relationship: "",
+          allowMarketing: false,
+        });
       } else {
-        setSubmitStatus("error")
+        setSubmitStatus("error");
       }
     } catch (error) {
-      setSubmitStatus("error")
+      setSubmitStatus("error");
     } finally {
-      setIsSubmitting(false)
+      setIsSubmitting(false);
     }
-  }
+  };
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
-    const { name, value, type } = e.target
+  const handleChange = (
+    e: React.ChangeEvent<
+      HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement
+    >
+  ) => {
+    const { name, value, type } = e.target;
     setFormData({
       ...formData,
-      [name]: type === "checkbox" ? (e.target as HTMLInputElement).checked : value
-    })
-  }
+      [name]:
+        type === "checkbox" ? (e.target as HTMLInputElement).checked : value,
+    });
+  };
 
   const renderStars = (rating: number) => {
     return Array.from({ length: 5 }, (_, i) => (
@@ -110,17 +124,20 @@ export default function ReviewsPage() {
           i < rating ? "text-yellow-400 fill-current" : "text-gray-300"
         }`}
       />
-    ))
-  }
+    ));
+  };
 
   return (
     <div className="min-h-screen flex flex-col">
       <Header />
       <main className="flex-1 container mx-auto px-4 py-8">
         <div className="max-w-4xl mx-auto">
-          <h1 className="text-3xl font-bold mb-6 text-center">What Our Families Say</h1>
+          <h1 className="text-3xl font-bold mb-6 text-center">
+            What Our Families Say
+          </h1>
           <p className="text-muted-foreground mb-8 text-center">
-            Don't just take our word for it - hear from families who've experienced our programs.
+            Don't just take our word for it - hear from families who've
+            experienced our programs.
           </p>
 
           {/* Reviews Carousel */}
@@ -138,7 +155,7 @@ export default function ReviewsPage() {
               <div className="text-sm text-muted-foreground">
                 {reviews[currentReview].relationship}
               </div>
-              
+
               {/* Navigation arrows */}
               <button
                 onClick={prevReview}
@@ -170,8 +187,10 @@ export default function ReviewsPage() {
 
           {/* Review Submission Form */}
           <div className="max-w-2xl mx-auto">
-            <h2 className="text-2xl font-bold mb-6 text-center">Share Your Experience</h2>
-            
+            <h2 className="text-2xl font-bold mb-6 text-center">
+              Share Your Experience
+            </h2>
+
             {submitStatus === "success" && (
               <div className="bg-green-50 border border-green-200 text-green-800 px-4 py-3 rounded-md mb-6">
                 Thank you for your review!
@@ -180,14 +199,18 @@ export default function ReviewsPage() {
 
             {submitStatus === "error" && (
               <div className="bg-red-50 border border-red-200 text-red-800 px-4 py-3 rounded-md mb-6">
-                Sorry, there was an error submitting your review. Please try again later.
+                Sorry, there was an error submitting your review. Please try
+                again later.
               </div>
             )}
 
             <form onSubmit={handleSubmit} className="space-y-4">
               <div className="grid md:grid-cols-2 gap-4">
                 <div>
-                  <label htmlFor="name" className="block text-sm font-medium mb-1">
+                  <label
+                    htmlFor="name"
+                    className="block text-sm font-medium mb-1"
+                  >
                     Name *
                   </label>
                   <input
@@ -201,7 +224,10 @@ export default function ReviewsPage() {
                   />
                 </div>
                 <div>
-                  <label htmlFor="email" className="block text-sm font-medium mb-1">
+                  <label
+                    htmlFor="email"
+                    className="block text-sm font-medium mb-1"
+                  >
                     Email *
                   </label>
                   <input
@@ -218,7 +244,10 @@ export default function ReviewsPage() {
 
               <div className="grid md:grid-cols-2 gap-4">
                 <div>
-                  <label htmlFor="rating" className="block text-sm font-medium mb-1">
+                  <label
+                    htmlFor="rating"
+                    className="block text-sm font-medium mb-1"
+                  >
                     Rating *
                   </label>
                   <select
@@ -237,7 +266,10 @@ export default function ReviewsPage() {
                   </select>
                 </div>
                 <div>
-                  <label htmlFor="relationship" className="block text-sm font-medium mb-1">
+                  <label
+                    htmlFor="relationship"
+                    className="block text-sm font-medium mb-1"
+                  >
                     Relationship
                   </label>
                   <input
@@ -253,7 +285,10 @@ export default function ReviewsPage() {
               </div>
 
               <div>
-                <label htmlFor="review" className="block text-sm font-medium mb-1">
+                <label
+                  htmlFor="review"
+                  className="block text-sm font-medium mb-1"
+                >
                   Your Review *
                 </label>
                 <textarea
@@ -277,9 +312,13 @@ export default function ReviewsPage() {
                   onChange={handleChange}
                   className="mt-1"
                 />
-                <label htmlFor="allowMarketing" className="text-sm text-muted-foreground">
-                  I agree to allow this review to be published on the Down to Swim website for marketing purposes. 
-                  Your email will not be displayed publicly.
+                <label
+                  htmlFor="allowMarketing"
+                  className="text-sm text-muted-foreground"
+                >
+                  I agree to allow this review to be published on the Down to
+                  Swim website for marketing purposes. Your email will not be
+                  displayed publicly.
                 </label>
               </div>
 
@@ -296,5 +335,5 @@ export default function ReviewsPage() {
       </main>
       <Footer />
     </div>
-  )
+  );
 }

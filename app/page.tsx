@@ -10,14 +10,7 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import {
-  Users,
-  Shield,
-  Award,
-  DollarSign,
-  Star,
-  CheckCircle,
-} from "lucide-react";
+import { Users, Shield, Award, DollarSign, CheckCircle } from "lucide-react";
 
 export default function HomePage() {
   return (
@@ -28,8 +21,8 @@ export default function HomePage() {
       <section className="relative bg-gradient-to-br from-primary/10 via-background to-accent/5 py-20">
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center bg-[url(public/">
-            <div className="space-y-6 bg-image">
-              <Badge className="bg-accent/10 text-accent border-accent/20">
+            <div className="space-y-6 bg-image space-x-2">
+              <Badge className="bg-accent/10 text-accent border-accent/20 ">
                 Therapeutic Aquatics
               </Badge>
               <Badge className="bg-accent/10 text-accent border-accent/20">
@@ -57,7 +50,7 @@ export default function HomePage() {
                   </Button>
                 </Link>
                 <Button size="lg" variant="outline">
-                  View Our Services
+                  View Services
                 </Button>
               </div>
             </div>
@@ -180,9 +173,11 @@ export default function HomePage() {
                     <span className="text-sm">One on one sessions</span>
                   </li>
                 </ul>
-                <Button className="w-full bg-transparent" variant="outline">
-                  Learn More
-                </Button>
+                <Link href="/lessons">
+                  <Button className="w-full bg-transparent" variant="outline">
+                    Learn More
+                  </Button>
+                </Link>
               </CardContent>
             </Card>
 
@@ -211,9 +206,11 @@ export default function HomePage() {
                     <span className="text-sm">One on one sessions</span>
                   </li>
                 </ul>
-                <Button className="w-full bg-transparent" variant="outline">
-                  Learn More
-                </Button>
+                <Link href="/lessons">
+                  <Button className="w-full bg-transparent" variant="outline">
+                    Learn More
+                  </Button>
+                </Link>
               </CardContent>
             </Card>
 
@@ -242,9 +239,11 @@ export default function HomePage() {
                     <span className="text-sm">Flexible timing</span>
                   </li>
                 </ul>
-                <Button className="w-full bg-transparent" variant="outline">
-                  Learn More
-                </Button>
+                <Link href="/lessons">
+                  <Button className="w-full bg-transparent" variant="outline">
+                    Learn More
+                  </Button>
+                </Link>
               </CardContent>
             </Card>
           </div>
@@ -265,6 +264,7 @@ export default function HomePage() {
           </div>
 
           {/* <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            Dummy Reviews
             <Card>
               <CardHeader>
                 <div className="flex items-center space-x-1 mb-2">
@@ -316,8 +316,7 @@ export default function HomePage() {
               <CardContent>
                 <p className="text-muted-foreground italic">
                   "Both my twins learned to swim here. The small class sizes and
-                  patient instructors made all the difference. Highly recommend
-                  AquaLearn!"
+                  patient instructors made all the difference. Highly recommend!"
                 </p>
               </CardContent>
             </Card>
@@ -337,11 +336,12 @@ export default function HomePage() {
       <section className="py-20 bg-gradient-to-r from-primary to-accent">
         <div className="container mx-auto px-4 text-center">
           <h2 className="text-3xl lg:text-4xl font-bold text-white mb-4 text-balance">
-            Ready to Start Your Swimming Journey?
+            Ready to Start Swimming?
           </h2>
           <p className="text-xl text-white/90 mb-8 max-w-2xl mx-auto text-pretty">
-            Join hundreds of satisfied students who've learned to swim with
-            confidence at AquaLearn. Book your first lesson today!
+            Join the other Idaho Families whose kids have found success and
+            confidence at Down to Swim. Reach out today to get your first lesson
+            set up!
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link href="/contact">
@@ -352,13 +352,13 @@ export default function HomePage() {
                 Book a Lesson Now
               </Button>
             </Link>
-            <Button
+            {/* <Button
               size="lg"
               variant="outline"
               className="border-white text-white hover:bg-white hover:text-primary bg-transparent"
             >
               Call (555) 123-4567
-            </Button>
+            </Button> */}
           </div>
         </div>
       </section>

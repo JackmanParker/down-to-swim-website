@@ -23,21 +23,21 @@ export default function InstructorsPage() {
                 alt="Brooklyn Instructor"
                 width={300}
                 height={300}
-                className="rounded-lg"
+                className="rounded-lg mx-auto"
               />
 
               {/* Quick stats */}
               <div className="grid grid-cols-2 gap-4">
                 <Card className="p-4 text-center">
                   <Award className="h-6 w-6 text-primary mx-auto mb-2" />
-                  <div className="text-2xl font-bold text-primary">10+</div>
+                  <div className="text-2xl font-bold text-primary">8+</div>
                   <div className="text-sm text-muted-foreground">
                     Years Experience
                   </div>
                 </Card>
                 <Card className="p-4 text-center">
                   <Users className="h-6 w-6 text-primary mx-auto mb-2" />
-                  <div className="text-2xl font-bold text-primary">500+</div>
+                  <div className="text-2xl font-bold text-primary">150+</div>
                   <div className="text-sm text-muted-foreground">
                     Students Taught
                   </div>
@@ -52,30 +52,27 @@ export default function InstructorsPage() {
                   Brooklynn Jackman
                 </h2>
                 <p className="text-lg text-muted-foreground mb-4">
-                  Head Swimming Instructor & Program Director
+                  Head Swim Instructor, Business Owner, Therapeutic Aquatics
+                  Teacher, ATRIC
                 </p>
-
-                <div className="flex flex-wrap gap-2 mb-6">
-                  <Badge variant="secondary">Certified Instructor</Badge>
-                  <Badge variant="secondary">Water Safety</Badge>
-                  <Badge variant="secondary">Competitive Training</Badge>
-                  <Badge variant="secondary">Adult Lessons</Badge>
-                </div>
               </div>
 
               <div className="space-y-4">
                 <p className="text-muted-foreground">
-                  Brooklynn brings over a decade of swimming instruction
-                  experience to Down to Swim, with a passion for helping
-                  students of all ages and skill levels achieve their swimming
-                  goals.
+                  Brooklynn brings over 8 years of swim teaching experience,
+                  with a specialization and passion for teaching those with
+                  special needs. Wherever a student is at, Brooklynn is excited
+                  to help them learn the next skill!
                 </p>
 
                 <p className="text-muted-foreground">
-                  As a former competitive swimmer and certified instructor,
-                  Brooklynn understands both the technical aspects of swimming
-                  and the confidence-building process that makes learning to
-                  swim enjoyable and safe.
+                  After finishing a degree in Data Science through BYU-Idaho,
+                  she realized she missed the water and working with the amazing
+                  kids and students. Because of this, she started Down to Swim,
+                  a company focused on helping those with special needs gain
+                  real water skills, assisting students to gain confidence and
+                  have fun while also helping parents trust their child’s safety
+                  around water.
                 </p>
 
                 <div className="bg-primary/5 p-4 rounded-lg">
@@ -84,10 +81,12 @@ export default function InstructorsPage() {
                     Teaching Philosophy
                   </h3>
                   <p className="text-sm text-muted-foreground">
-                    "Every student learns differently, and my goal is to create
-                    a supportive, encouraging environment where each person can
-                    progress at their own pace while building confidence in the
-                    water."
+                    “My goal is to help every person gain real water skills.
+                    When a child’s needs are different from others, they can
+                    still learn water safety and how to have fun in the water!
+                    Watching my students learn a new skill is what keeps me
+                    going. People can do amazing things when given clear
+                    direction and someone who believes in them.”
                   </p>
                 </div>
 
@@ -96,23 +95,15 @@ export default function InstructorsPage() {
                   <ul className="space-y-2 text-sm text-muted-foreground">
                     <li className="flex items-center">
                       <Clock className="h-4 w-4 mr-2 text-primary" />
-                      Beginner to advanced technique instruction
+                      Special Needs Swim Lessons
                     </li>
                     <li className="flex items-center">
                       <Clock className="h-4 w-4 mr-2 text-primary" />
-                      Water safety and survival skills
+                      Todler Swim Lessons
                     </li>
                     <li className="flex items-center">
                       <Clock className="h-4 w-4 mr-2 text-primary" />
-                      Competitive stroke refinement
-                    </li>
-                    <li className="flex items-center">
-                      <Clock className="h-4 w-4 mr-2 text-primary" />
-                      Adult learn-to-swim programs
-                    </li>
-                    <li className="flex items-center">
-                      <Clock className="h-4 w-4 mr-2 text-primary" />
-                      Special needs swimming instruction
+                      Helping Students Overcome Fear of Water
                     </li>
                   </ul>
                 </div>
@@ -122,11 +113,11 @@ export default function InstructorsPage() {
                     Certifications & Training
                   </h3>
                   <ul className="text-sm text-muted-foreground space-y-1">
-                    <li>• American Red Cross Water Safety Instructor</li>
-                    <li>• Lifeguard Certification</li>
-                    <li>• CPR/AED Certified</li>
-                    <li>• Special Needs Swimming Certification</li>
-                    <li>• Competitive Swimming Coach License</li>
+                    <li>• CPR/AED - American Heart Association</li>
+                    <li>
+                      • Aquatic Therapy and Rehab Certification (ATRIC) - AEA
+                    </li>
+                    <li>• Intro to Aquatic Therapy Training - AEA</li>
                   </ul>
                 </div>
               </div>
@@ -136,11 +127,11 @@ export default function InstructorsPage() {
           {/* Call to action */}
           <div className="mt-12 text-center">
             <h3 className="text-xl font-semibold mb-4">
-              Ready to Start Your Swimming Journey?
+              Ready to Start Swimming?
             </h3>
             <p className="text-muted-foreground mb-6">
               Book a lesson with Brooklynn and experience personalized
-              instruction that builds confidence and proper technique.
+              instruction that builds confidence.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a

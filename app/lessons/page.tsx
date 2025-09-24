@@ -26,27 +26,18 @@ export default function LessonsPage() {
             </h2>
             <p className="text-xl text-muted-foreground max-w-2xl mx-auto text-pretty">
               Both programs are designed with safety and individual needs in
-              mind, but each serves a different purpose. Both also are 30
-              minutes long.
+              mind, but each serves a different purpose.
             </p>
           </div>
 
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 max-w-6xl mx-auto">
             {/* Private Swim Lessons */}
             <Card className="relative overflow-hidden border-2 border-primary/20">
-              <div className="absolute top-4 right-4">
-                <Badge className="bg-primary text-primary-foreground">
-                  Popular
-                </Badge>
-              </div>
               <CardHeader className="pb-4">
-                <div className="bg-primary/10 text-primary p-3 rounded-full w-fit mb-4">
-                  <Target className="h-8 w-8" />
-                </div>
                 <CardTitle className="text-2xl">Private Swim Lessons</CardTitle>
                 <CardDescription className="text-lg">
-                  Skill-focused instruction for stroke development and
-                  confidence
+                  Skill-focused lessons for building water confidence and skill
+                  development
                 </CardDescription>
               </CardHeader>
               <CardContent className="space-y-6">
@@ -55,32 +46,33 @@ export default function LessonsPage() {
                   <ul className="space-y-2">
                     <li className="flex items-start space-x-2">
                       <CheckCircle className="h-5 w-5 text-primary mt-0.5 flex-shrink-0" />
-                      <span>Stroke development and refinement</span>
+                      <span>Water Confidence Building</span>
                     </li>
                     <li className="flex items-start space-x-2">
                       <CheckCircle className="h-5 w-5 text-primary mt-0.5 flex-shrink-0" />
-                      <span>Water confidence building</span>
+                      <span>Stroke Development</span>
                     </li>
                     <li className="flex items-start space-x-2">
                       <CheckCircle className="h-5 w-5 text-primary mt-0.5 flex-shrink-0" />
-                      <span>Competitive swimming preparation</span>
+                      <span>Water Safety Skills</span>
                     </li>
                     <li className="flex items-start space-x-2">
                       <CheckCircle className="h-5 w-5 text-primary mt-0.5 flex-shrink-0" />
-                      <span>Personalized skill progression</span>
+                      <span>Age-Based Activities for Learning</span>
                     </li>
                   </ul>
                 </div>
                 <div className="space-y-4">
                   <h3 className="font-semibold text-lg">Price:</h3>
-                  <h4 className="font-semibold text-lg">$25/Session</h4>
+                  <h4 className="font-semibold text-lg">$25/ 30 min Session</h4>
+                  <h4 className="font-semibold text-lg">$50/ 60 min Session</h4>
                 </div>
 
                 <div className="bg-primary/5 p-4 rounded-lg">
                   <h4 className="font-semibold mb-2">All Ages Welcome</h4>
                   <p className="text-sm text-muted-foreground">
-                    From beginners to advanced swimmers, our private lessons are
-                    tailored to your current skill level and goals.
+                    From infants to adults, private lessons are tailored to the
+                    student's skill level and abilities.
                   </p>
                 </div>
 
@@ -100,12 +92,10 @@ export default function LessonsPage() {
                 </Badge>
               </div>
               <CardHeader className="pb-4">
-                <div className="bg-accent/10 text-accent p-3 rounded-full w-fit mb-4">
-                  <Heart className="h-8 w-8" />
-                </div>
                 <CardTitle className="text-2xl">Therapeutic Aquatics</CardTitle>
                 <CardDescription className="text-lg">
-                  Health-focused swimming for individuals with special needs
+                  Student-centered lessons designed to improve coordinated
+                  movements, build confidence, and develop water skills
                 </CardDescription>
               </CardHeader>
               <CardContent className="space-y-6">
@@ -114,33 +104,34 @@ export default function LessonsPage() {
                   <ul className="space-y-2">
                     <li className="flex items-start space-x-2">
                       <CheckCircle className="h-5 w-5 text-accent mt-0.5 flex-shrink-0" />
-                      <span>Safety and health improvement</span>
+                      <span>Water Confidence Building</span>
                     </li>
                     <li className="flex items-start space-x-2">
                       <CheckCircle className="h-5 w-5 text-accent mt-0.5 flex-shrink-0" />
-                      <span>Therapeutic water exercises</span>
+                      <span>Coordinated Movements</span>
                     </li>
                     <li className="flex items-start space-x-2">
                       <CheckCircle className="h-5 w-5 text-accent mt-0.5 flex-shrink-0" />
-                      <span>Adaptive swimming techniques</span>
+                      <span>Water Safety Skills</span>
                     </li>
                     <li className="flex items-start space-x-2">
                       <CheckCircle className="h-5 w-5 text-accent mt-0.5 flex-shrink-0" />
-                      <span>Individualized care plans</span>
+                      <span>Age-Based Activities for Learning</span>
                     </li>
                   </ul>
                 </div>
                 <div className="space-y-4">
                   <h3 className="font-semibold text-lg">Price:</h3>
-                  <h4 className="font-semibold text-lg">$45/Session</h4>
+                  <h4 className="font-semibold text-lg">$45/ 30 min Session</h4>
+                  <h4 className="font-semibold text-lg">$90/ 60 min Session</h4>
                 </div>
 
                 <div className="bg-accent/5 p-4 rounded-lg">
                   <h4 className="font-semibold mb-2">FDS Coverage</h4>
                   <p className="text-sm text-muted-foreground">
-                    This program may be covered by FDS (Family and Developmental
+                    This program may be covered by FDS (Family Directed
                     Services) plans. Contact us to discuss your coverage
-                    options.
+                    options. (Ages 3-17)
                   </p>
                 </div>
 
@@ -159,7 +150,7 @@ export default function LessonsPage() {
       <section className="py-20 bg-gradient-to-r from-primary to-accent">
         <div className="container mx-auto px-4 text-center">
           <h2 className="text-3xl lg:text-4xl font-bold text-white mb-4 text-balance">
-            Ready to Start Your Swimming Journey?
+            Ready to Start Swimming?
           </h2>
           <p className="text-xl text-white/90 mb-8 max-w-2xl mx-auto text-pretty">
             Not sure which program is right for you? Contact us for a
