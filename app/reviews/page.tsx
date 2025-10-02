@@ -132,16 +132,16 @@ export default function ReviewsPage() {
       <Header />
       <main className="flex-1 container mx-auto px-4 py-8">
         <div className="max-w-4xl mx-auto">
-          <h1 className="text-3xl font-bold mb-6 text-center">
+          {/* <h1 className="text-3xl font-bold mb-6 text-center">
             What Our Families Say
           </h1>
           <p className="text-muted-foreground mb-8 text-center">
             Don't just take our word for it - hear from families who've
             experienced our programs.
-          </p>
+          </p> */}
 
           {/* Reviews Carousel */}
-          <div className="mb-12">
+          {/* <div className="mb-12">
             <Card className="p-8 text-center relative">
               <div className="flex justify-center mb-4">
                 {renderStars(reviews[currentReview].rating)}
@@ -154,10 +154,10 @@ export default function ReviewsPage() {
               </div>
               <div className="text-sm text-muted-foreground">
                 {reviews[currentReview].relationship}
-              </div>
+              </div> */}
 
-              {/* Navigation arrows */}
-              <button
+          {/* Navigation arrows */}
+          {/* <button
                 onClick={prevReview}
                 className="absolute left-4 top-1/2 transform -translate-y-1/2 p-2 rounded-full bg-primary/10 hover:bg-primary/20 transition-colors"
               >
@@ -169,10 +169,10 @@ export default function ReviewsPage() {
               >
                 <ChevronRight className="h-6 w-6" />
               </button>
-            </Card>
+            </Card> */}
 
-            {/* Dots indicator */}
-            <div className="flex justify-center mt-4 space-x-2">
+          {/* Dots indicator */}
+          {/* <div className="flex justify-center mt-4 space-x-2">
               {reviews.map((_, index) => (
                 <button
                   key={index}
@@ -183,7 +183,7 @@ export default function ReviewsPage() {
                 />
               ))}
             </div>
-          </div>
+          </div> */}
 
           {/* Review Submission Form */}
           <div className="max-w-2xl mx-auto">
