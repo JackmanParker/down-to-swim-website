@@ -107,10 +107,10 @@ export function Header() {
                 Instructor
               </Link>
               <Link
-                href="/about"
+                href="/reviews"
                 className="text-foreground hover:text-primary transition-colors"
               >
-                About
+                Reviews
               </Link>
               <Link
                 href="/contact"
