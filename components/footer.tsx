@@ -90,7 +90,7 @@ export function Footer() {
               <div className="flex items-center space-x-2">
                 <MapPin className="h-4 w-4 text-primary" />
                 <span className="text-muted-foreground text-sm">
-                  Idaho Falls/Rexburg Idaho
+                  Provo area Utah
                 </span>
               </div>
             </div>

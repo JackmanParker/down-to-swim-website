@@ -339,7 +339,7 @@ export default function HomePage() {
             Ready to Start Swimming?
           </h2>
           <p className="text-xl text-white/90 mb-8 max-w-2xl mx-auto text-pretty">
-            Join the other Idaho Families whose kids have found success and
+            Join the other Utah Families whose kids have found success and
             confidence at Down to Swim. Reach out today to get your first lesson
             set up!
           </p>
